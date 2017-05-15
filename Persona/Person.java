@@ -14,9 +14,20 @@ public abstract class Person {
 	}
 
 	private boolean checkDni(String dni){
-		if(dni != nul && dni.matches("[-+]?\\d*\\.?\\d+")){
+		if(dni != null && dni.matches("[-+]?\\d*\\.?\\d+")){
 			return true;
 		}
+		return false;
+	}
+	private boolean checkName(String name){
+		if(name != null && name.matches("[a-zA-Z ]+"))
+			return true;
+		return false;
+	}
+
+	private boolean checkSurname(String surname){
+		if(surname != null && surname.matches("[a-zA-Z ]+"))
+			return true;
 		return false;
 	}
 
@@ -32,7 +43,7 @@ public abstract class Person {
 
 
 	public String getDni(){
-		return getDni;
+		return dni;
 	}
 	public String getName(){
 		return name;
